@@ -3,7 +3,7 @@ import css from './ImageGallery.module.css'
 
 export default function ImageGallery({items}) {
     return (
-        <ul>
+        <ul className={css.container}>
         {items.map((item) => (
           <li key={item.id}>
             <ImageCard item={item} />
