@@ -12,5 +12,5 @@ export const fetchImg = async (searchQuery, currentPage) => {
             page: currentPage,
         }
     })
-    return response.data.hits;
+    return response.data.results;
 }
