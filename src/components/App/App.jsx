@@ -5,7 +5,7 @@ import ImageGallery from "../ImageGallery/ImageGallery";
 import Loader from "../Loader/Loader";
 import ErrorMessage from "../ErrorMessage/ErrorMessage";
 import ImageModal from "../ImageModal/ImageModal";
-// import css from "./App.module.css";
+import css from "./App.module.css";
 import { fetchImg } from "../../pictures-api";
 
 export default function App() {
@@ -26,17 +26,22 @@ export default function App() {
   const handleLoadMore = () => {
     setPage(page + 1)
      }
-     const openModal= (image) => {
+     const openModal= () => {
       setIsOpen(true)
-      setSelectedImage(image)
+      
      }
 const closeModal = () => {
   setIsOpen(false)
   setSelectedImage(null)
 }
 const handleImageClick = (image) => {
-  setSelectedImage(image);
+  setSelectedImage({
+    url: image.urls.regular,
+    description: image.alt_description
+  });
+  openModal()
 };
+
   useEffect (()=> {
     if (query === '') {
       return
@@ -57,14 +62,14 @@ return [...prevImages, ...data]
   }, [query, page])
 
   return (
-    <div>
+    <div className={css.container}>
       <SearchBar onSearch={handleSearch} />
       {error && <ErrorMessage/>}
       {images.length > 0 && <ImageGallery items={images} onImageClick={handleImageClick} />}
       {isLoading && <Loader/>}
       {images.length > 0 && <LoadMoreBtn onClick={handleLoadMore}/>}
 
-   <ImageModal isOpen={openModal} closeModal={closeModal} imageData={selectedImage} />
+   <ImageModal isOpen={false} closeModal={closeModal} imageData={selectedImage} />
    
     </div>
    

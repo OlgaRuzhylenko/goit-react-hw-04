@@ -10,6 +10,7 @@ export const fetchImg = async (searchQuery, currentPage) => {
             client_id: API_KEY,
             query: searchQuery,
             page: currentPage,
+            per_page: 12,
         }
     })
     return response.data.results;

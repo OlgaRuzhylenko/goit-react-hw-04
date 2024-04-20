@@ -3,7 +3,7 @@ import css from './Loader.module.css'
 
 export default function Loader() {
     return(
-        <div>
+        <div className={css.box}>
             
             <Hourglass
   visible={true}

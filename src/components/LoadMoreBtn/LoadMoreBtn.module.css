@@ -1,0 +1,16 @@
+.btn {
+    width: 200px;
+    height: 30px;
+    background-color: blue;
+    border-radius: 8px;
+    border: 1px solid transparent;
+  font-size: 1em;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.box {
+    display: flex;
+  align-items: center; 
+  justify-content: center;
+}

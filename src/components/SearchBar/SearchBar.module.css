@@ -1,0 +1,23 @@
+.form {
+    background-color: blue;
+    display: flex;
+  align-items: center; 
+  justify-content: center;
+  height: 50px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+.btn{
+position: absolute;
+left: 525px;
+width: 35px;
+height: 35px;
+}
+.input {
+    position: inherit;
+    width: 300px;
+    height: 30px;
+    padding-left: 50px
+}
+.svg {
+  
+}
