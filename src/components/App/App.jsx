@@ -5,8 +5,10 @@ import ImageGallery from "../ImageGallery/ImageGallery";
 import Loader from "../Loader/Loader";
 import ErrorMessage from "../ErrorMessage/ErrorMessage";
 import ImageModal from "../ImageModal/ImageModal";
+import Modal from 'react-modal';
 import css from "./App.module.css";
 import { fetchImg } from "../../pictures-api";
+Modal.setAppElement('#root');
 
 export default function App() {
   const [images, setImages] = useState([]);
@@ -26,7 +28,7 @@ export default function App() {
   const handleLoadMore = () => {
     setPage(page + 1)
      }
-     const openModal= () => {
+  const openModal= () => {
       setIsOpen(true)
       
      }
@@ -69,7 +71,7 @@ return [...prevImages, ...data]
       {isLoading && <Loader/>}
       {images.length > 0 && <LoadMoreBtn onClick={handleLoadMore}/>}
 
-   <ImageModal isOpen={false} closeModal={closeModal} imageData={selectedImage} />
+   <ImageModal isOpen={modalIsOpen} closeModal={closeModal} imageData={selectedImage} />
    
     </div>
    
