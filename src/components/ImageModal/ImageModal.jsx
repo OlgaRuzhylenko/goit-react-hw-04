@@ -1,7 +1,11 @@
 import Modal from 'react-modal';
 import css from './ImageModal.module.css'
 
-
+interface IImageModalProps {
+  isOpen
+  closeModal
+  imageData
+}
 export default function ImageModal({ isOpen, closeModal, imageData }) {
  
     return (
